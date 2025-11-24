@@ -1,0 +1,10 @@
+services:
+  web-app:
+    build: ./web-app
+    container_name: physionet-web-app
+    ports:
+      - "3000:5173"
+    volumes:
+      - ./web-app:/app
+      - /app/node_modules
+    restart: unless-stopped
